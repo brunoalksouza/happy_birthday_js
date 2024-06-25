@@ -10,12 +10,8 @@ if (c != null) {
   document.getElementById("name").innerHTML = c;
   document.getElementById("nae").innerHTML = c;
 }
-$(".main").fadeOut(1);
-var audio = $(".song")[0];
-audio.play();
-$(document).ready(function () {
-  $(".loader").fadeOut(1500);
-  $(".main").fadeIn("slow");
+$("#play").click(function () {
+  $(".loader").fadeOut("slow");
   sf.destroy();
   $(".balloon-border").animate(
     {
