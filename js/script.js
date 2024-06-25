@@ -11,6 +11,8 @@ if (c != null) {
   document.getElementById("nae").innerHTML = c;
 }
 $(".main").fadeOut(1);
+var audio = $(".song")[0];
+audio.play();
 $(document).ready(function () {
   $(".loader").fadeOut(1500);
   $(".main").fadeIn("slow");
