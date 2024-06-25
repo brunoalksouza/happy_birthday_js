@@ -97,6 +97,29 @@
           img.onload();
         }
       };
+
+      window.onclick = function () {
+        setTimeout(function () {
+          var audio = document.getElementById("birthday-song");
+          audio.play();
+          audio.play();
+          audio.play();
+          audio.play();
+        }, 2000);
+        setTimeout(function () {
+          var audio = document.getElementById("birthday-song");
+          audio.play();
+          audio.play();
+          audio.play();
+          audio.play();
+        }, 3000);
+
+        // Forcing a load event to trigger in case the image is already cached
+        var img = document.getElementById("banner-img");
+        if (img.complete) {
+          img.onload();
+        }
+      };
     </script>
   </body>
 </html>
