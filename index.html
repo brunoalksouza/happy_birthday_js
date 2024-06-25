@@ -78,18 +78,20 @@
     <script src="js/script.js"></script>
 
     <script>
-      // Espera até que a página esteja completamente carregada
       window.onload = function () {
-        var audio = document.getElementById("birthday-song");
-
-        // Verifica se o áudio já foi carregado
-        if (audio.readyState >= 2) {
+        setTimeout(function () {
+          var audio = document.getElementById("birthday-song");
           audio.play();
-        } else {
-          // Se não estiver pronto, espera pelo evento 'canplaythrough'
-          audio.oncanplaythrough = function () {
-            audio.play();
-          };
+        }, 2000);
+        setTimeout(function () {
+          var audio = document.getElementById("birthday-song");
+          audio.play();
+        }, 3000);
+
+        // Forcing a load event to trigger in case the image is already cached
+        var img = document.getElementById("banner-img");
+        if (img.complete) {
+          img.onload();
         }
       };
     </script>
