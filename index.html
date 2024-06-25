@@ -73,11 +73,8 @@
 
     <script>
       window.onload = function () {
-        var img = document.getElementById("banner-img");
-        img.onload = function () {
-          var audio = document.getElementById("birthday-song");
-          audio.play();
-        };
+        var audio = document.getElementById("birthday-song");
+        audio.play();
         // Forcing a load event to trigger in case the image is already cached
         if (img.complete) {
           img.onload();
