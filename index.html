@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="img/favicon/favicon.png" type="image/png" />
   </head>
+  <audio id="birthday-song" class="song" loop preload="auto">
+    <source src="Manoel Gomes Meus Parabens.mp3" type="audio/mpeg" />
+  </audio>
 
   <body>
     <audio id="birthday-song" class="song" loop>
@@ -75,49 +78,18 @@
     <script src="js/script.js"></script>
 
     <script>
+      // Espera até que a página esteja completamente carregada
       window.onload = function () {
-        setTimeout(function () {
-          var audio = document.getElementById("birthday-song");
-          audio.play();
-          audio.play();
-          audio.play();
-          audio.play();
-        }, 2000);
-        setTimeout(function () {
-          var audio = document.getElementById("birthday-song");
-          audio.play();
-          audio.play();
-          audio.play();
-          audio.play();
-        }, 3000);
+        var audio = document.getElementById("birthday-song");
 
-        // Forcing a load event to trigger in case the image is already cached
-        var img = document.getElementById("banner-img");
-        if (img.complete) {
-          img.onload();
-        }
-      };
-
-      window.onclick = function () {
-        setTimeout(function () {
-          var audio = document.getElementById("birthday-song");
+        // Verifica se o áudio já foi carregado
+        if (audio.readyState >= 2) {
           audio.play();
-          audio.play();
-          audio.play();
-          audio.play();
-        }, 2000);
-        setTimeout(function () {
-          var audio = document.getElementById("birthday-song");
-          audio.play();
-          audio.play();
-          audio.play();
-          audio.play();
-        }, 3000);
-
-        // Forcing a load event to trigger in case the image is already cached
-        var img = document.getElementById("banner-img");
-        if (img.complete) {
-          img.onload();
+        } else {
+          // Se não estiver pronto, espera pelo evento 'canplaythrough'
+          audio.oncanplaythrough = function () {
+            audio.play();
+          };
         }
       };
     </script>
